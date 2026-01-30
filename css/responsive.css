@@ -1,0 +1,607 @@
+/* ============================================
+   RESPONSIVIDADE - TABLETS (1024px e abaixo)
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+    .recursos-grid,
+    .planos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav {
+        gap: 30px;
+        margin-left: 40px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons button {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   RESPONSIVIDADE - MOBILE (768px e abaixo)
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Header Mobile */
+    .header {
+        position: relative;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+        width: 100%;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        margin-left: 0;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        border-bottom: 1px solid var(--gray-light);
+        padding: 15px 20px;
+        z-index: 99;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav-link {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .header-actions {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        order: 4;
+        position: absolute;
+        top: 140px;
+        left: 0;
+        right: 0;
+        gap: 10px;
+        padding: 15px 20px;
+        background-color: var(--white);
+        border-bottom: 1px solid var(--gray-light);
+        z-index: 99;
+    }
+
+    .header-actions.active {
+        display: flex;
+    }
+
+    .header-actions button {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 50px 0;
+        min-height: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 10px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .btn-large {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .hero-image img {
+        max-height: 400px;
+    }
+
+    /* Recursos */
+    .recursos {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .recursos-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .recurso-card {
+        padding: 30px 20px;
+    }
+
+    .recurso-icon {
+        font-size: 36px;
+    }
+
+    .recurso-card h3 {
+        font-size: 18px;
+    }
+
+    .recurso-card p {
+        font-size: 14px;
+    }
+
+    /* Planos */
+    .planos {
+        padding: 60px 0;
+    }
+
+    .planos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .plano-card {
+        padding: 30px 20px;
+    }
+
+    .plano-featured {
+        transform: scale(1);
+    }
+
+    .plano-featured:hover {
+        transform: translateY(-8px);
+    }
+
+    .plano-title {
+        font-size: 20px;
+    }
+
+    .plano-price {
+        font-size: 28px;
+    }
+
+    /* CTA Final */
+    .cta-final {
+        padding: 50px 0;
+    }
+
+    .cta-final h2 {
+        font-size: 28px;
+    }
+
+    .cta-final p {
+        font-size: 16px;
+    }
+
+    /* Signup */
+    .signup-page {
+        padding: 20px 15px;
+    }
+
+    .signup-container {
+        max-width: 100%;
+    }
+
+    .signup-header {
+        padding: 30px 20px;
+    }
+
+    .signup-header h1 {
+        font-size: 24px;
+    }
+
+    .signup-header p {
+        font-size: 14px;
+    }
+
+    .signup-step {
+        padding: 25px 20px;
+    }
+
+    .step-content h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .progress-bar {
+        margin-bottom: 25px;
+    }
+
+    .step-content form {
+        gap: 15px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+
+    /* Modal */
+    .modal-content {
+        margin: 30% auto;
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+    .modal-close {
+        right: 15px;
+        top: 15px;
+        font-size: 24px;
+    }
+
+    /* Input/Select Mobile */
+    .step-content input[type="text"],
+    .step-content input[type="email"],
+    .step-content input[type="password"],
+    .step-content input[type="number"],
+    .step-content select,
+    .step-content textarea {
+        padding: 14px 12px;
+        font-size: 16px;
+    }
+
+    .radio-option,
+    .checkbox-option {
+        gap: 8px;
+    }
+
+    .radio-option input[type="radio"],
+    .checkbox-option input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+
+    .radio-option span,
+    .checkbox-option span {
+        font-size: 14px;
+    }
+}
+
+/* ============================================
+   RESPONSIVIDADE - SMALL MOBILE (480px e abaixo)
+   ============================================ */
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Header */
+    .header {
+        border-bottom: 1px solid var(--gray-light);
+    }
+
+    .header-content {
+        gap: 10px;
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero-content {
+        gap: 30px;
+    }
+
+    .hero-title {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    /* Buttons */
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .btn-large {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    /* Seções */
+    .recursos {
+        padding: 40px 0;
+    }
+
+    .planos {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 22px;
+        margin-bottom: 30px;
+        line-height: 1.3;
+    }
+
+    .recurso-card {
+        padding: 20px 15px;
+    }
+
+    .recurso-icon {
+        font-size: 32px;
+    }
+
+    .recurso-card h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .recurso-card p {
+        font-size: 13px;
+    }
+
+    .plano-card {
+        padding: 20px 15px;
+    }
+
+    .plano-title {
+        font-size: 18px;
+    }
+
+    .plano-price {
+        font-size: 24px;
+    }
+
+    .plano-features li {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+
+    /* CTA Final */
+    .cta-final {
+        padding: 40px 0;
+    }
+
+    .cta-final h2 {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    .cta-final p {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    /* Signup */
+    .signup-header {
+        padding: 20px 15px;
+    }
+
+    .signup-header h1 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .signup-header p {
+        font-size: 12px;
+    }
+
+    .signup-step {
+        padding: 20px 15px;
+    }
+
+    .step-content h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .step-content input,
+    .step-content select,
+    .step-content textarea {
+        padding: 12px 10px;
+        font-size: 16px;
+    }
+
+    .step-content form {
+        gap: 12px;
+    }
+
+    .button-group {
+        gap: 8px;
+    }
+
+    /* Modal */
+    .modal-content {
+        margin: 40% auto;
+        width: 95%;
+        padding: 25px 15px;
+    }
+
+    .modal h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 20px 0;
+        font-size: 12px;
+    }
+
+    .footer-links {
+        gap: 10px;
+    }
+
+    .footer-links a {
+        font-size: 12px;
+    }
+
+    /* Success Message */
+    .success-content h2 {
+        font-size: 24px;
+    }
+
+    .success-content p {
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+}
+
+/* ============================================
+   ORIENTAÇÃO LANDSCAPE (Modo paisagem)
+   ============================================ */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        padding: 30px 0;
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .cta-final {
+        padding: 30px 0;
+    }
+
+    .signup-page {
+        padding: 15px;
+    }
+
+    .modal-content {
+        margin: 5% auto;
+    }
+}
+
+/* ============================================
+   DARK MODE (Opcional para o futuro)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --black: #ffffff;
+        --white: #1a1a1a;
+        --gray-dark: #2a2a2a;
+        --gray-light: #333333;
+        --gray-medium: #999999;
+    }
+
+    body {
+        background-color: var(--white);
+        color: var(--black);
+    }
+
+    .header {
+        background-color: var(--white);
+        border-bottom-color: var(--gray-light);
+    }
+
+    .hero {
+        background: linear-gradient(135deg, var(--white) 0%, var(--gray-light) 100%);
+    }
+
+    .recurso-card {
+        background-color: var(--gray-light);
+    }
+
+    .recurso-card:hover {
+        background-color: var(--gray-dark);
+    }
+
+    .planos {
+        background-color: var(--gray-light);
+    }
+
+    .plano-card {
+        background-color: var(--gray-dark);
+    }
+
+    .signup-container {
+        background-color: var(--gray-dark);
+        color: var(--black);
+    }
+
+    .step-content h2 {
+        color: var(--black);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    select,
+    textarea {
+        background-color: var(--white);
+        color: var(--gray-dark);
+        border-color: var(--gray-light);
+    }
+}
