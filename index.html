@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Treino - Transforme seu corpo, transforme sua vida</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-text">Meu Treino</span>
+            </div>
+            <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <nav class="nav">
+                <a href="#inicio" class="nav-link" onclick="closeMobileMenu()">Início</a>
+                <a href="#recursos" class="nav-link" onclick="closeMobileMenu()">Recursos</a>
+                <a href="#planos" class="nav-link" onclick="closeMobileMenu()">Planos</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-secondary">Entrar</button>
+                <button class="btn-primary" onclick="scrollTo('#signup')">Começar grátis</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Seu treino perfeito, agora ao seu alcance</h1>
+                <p class="hero-subtitle">Treinos personalizados, agendamento inteligente e acompanhamento em tempo real.
+                    Transforme seu corpo com foco, segurança e precisão.</p>
+                <button class="btn-primary btn-large" onclick="scrollTo('#signup')">Começar grátis</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop"
+                    alt="Treino personalizado">
+            </div>
+        </div>
+    </section>
+
+    <!-- RECURSOS -->
+    <section id="recursos" class="recursos">
+        <div class="container">
+            <h2 class="section-title">Tudo que você precisa para transformar sua vida</h2>
+            <div class="recursos-grid">
+                <div class="recurso-card">
+                    <div class="recurso-icon">🎯</div>
+                    <h3>Treinos Personalizados</h3>
+                    <p>Programas desenhados especificamente para seu objetivo, corpo e limitações.</p>
+                </div>
+                <div class="recurso-card">
+                    <div class="recurso-icon">📊</div>
+                    <h3>Acompanhamento de Progresso</h3>
+                    <p>Veja seus ganhos crescerem com métricas detalhadas e gráficos em tempo real.</p>
+                </div>
+                <div class="recurso-card">
+                    <div class="recurso-icon">📅</div>
+                    <h3>Agendamento Inteligente</h3>
+                    <p>Organize suas sessões conforme sua rotina, com lembretes automáticos.</p>
+                </div>
+                <div class="recurso-card">
+                    <div class="recurso-icon">👥</div>
+                    <h3>Gestão de Clientes</h3>
+                    <p>Para trainers: controle total de seus clientes e suas progressões.</p>
+                </div>
+                <div class="recurso-card">
+                    <div class="recurso-icon">💬</div>
+                    <h3>Comunicação Direta</h3>
+                    <p>Chat integrado com seu personal trainer, respostas rápidas e suporte.</p>
+                </div>
+                <div class="recurso-card">
+                    <div class="recurso-icon">⚡</div>
+                    <h3>Métricas em Tempo Real</h3>
+                    <p>Dashboard intuitivo com todos os dados de desempenho sincronizados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section id="planos" class="planos">
+        <div class="container">
+            <h2 class="section-title">Escolha seu plano</h2>
+            <div class="planos-grid">
+                <!-- Cliente -->
+                <div class="plano-card">
+                    <h3 class="plano-title">Cliente</h3>
+                    <div class="plano-price">Grátis</div>
+                    <ul class="plano-features">
+                        <li>✓ Acesso a treinos personalizados</li>
+                        <li>✓ Acompanhamento de progresso</li>
+                        <li>✓ Chat direto com o trainer</li>
+                        <li>✓ Histórico completo de treinos</li>
+                        <li>✓ Metas e conquistas</li>
+                    </ul>
+                    <button class="btn-secondary">Começar agora</button>
+                </div>
+
+                <!-- Personal Trainer -->
+                <div class="plano-card plano-featured">
+                    <div class="plano-badge">Mais Popular</div>
+                    <h3 class="plano-title">Personal Trainer</h3>
+                    <div class="plano-price">R$ 29<span>/mês</span></div>
+                    <ul class="plano-features">
+                        <li>✓ Dashboard completo de clientes</li>
+                        <li>✓ Criação de treinos ilimitados</li>
+                        <li>✓ Análise de desempenho</li>
+                        <li>✓ Agendamento integrado</li>
+                        <li>✓ Ferramentas de comunicação</li>
+                    </ul>
+                    <button class="btn-primary">Assinar agora</button>
+                </div>
+
+                <!-- Administrador -->
+                <div class="plano-card">
+                    <h3 class="plano-title">Administrador</h3>
+                    <div class="plano-price">Sob demanda</div>
+                    <ul class="plano-features">
+                        <li>✓ Gestão de usuários e permissões</li>
+                        <li>✓ Relatórios e analytics</li>
+                        <li>✓ Configurações do sistema</li>
+                        <li>✓ Suporte e monitoramento</li>
+                        <li>✓ Backup e segurança</li>
+                    </ul>
+                    <button class="btn-secondary">Contatar vendas</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Pronto para começar?</h2>
+            <p>Junte-se a milhares de pessoas transformando suas vidas</p>
+            <div class="cta-buttons">
+                <button class="btn-primary btn-large" onclick="showQuizModal()">Criar conta gratuita</button>
+                <button class="btn-secondary" onclick="showLoginModal()">Já possuo conta</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Meu Treino. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#privacidade">Privacidade</a>
+                <a href="#termos">Termos</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE LOGIN -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+            <h2>Entrar na sua conta</h2>
+            <form class="login-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DE QUIZ (Criação de Conta Rápida) -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content quiz-modal">
+            <button class="modal-close" onclick="closeQuizModal()">Voltar ao nosso site</button>
+            <div id="quizContent">
+                <div class="quiz-header">
+                    <h2>Crie sua conta</h2>
+                    <p>Preencha seus dados para começar</p>
+                </div>
+                <form id="quizForm">
+                    <!-- Nome Completo -->
+                    <div class="quiz-question">
+                        <label for="quizFullName">Nome completo</label>
+                        <input type="text" id="quizFullName" name="quizFullName" placeholder="Digite seu nome completo"
+                            required>
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="quiz-question">
+                        <label for="quizEmail">E-mail</label>
+                        <input type="email" id="quizEmail" name="quizEmail" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <!-- Senha -->
+                    <div class="quiz-question">
+                        <label for="quizPassword">Senha</label>
+                        <input type="password" id="quizPassword" name="quizPassword"
+                            placeholder="Crie uma senha (mínimo 6 caracteres)" required>
+                    </div>
+
+                    <!-- Confirmação de Senha -->
+                    <div class="quiz-question">
+                        <label for="quizConfirmPassword">Confirmação de senha</label>
+                        <input type="password" id="quizConfirmPassword" name="quizConfirmPassword"
+                            placeholder="Confirme sua senha" required>
+                    </div>
+
+                    <!-- Tipo de Perfil -->
+                    <div class="quiz-question">
+                        <label>Tipo de perfil</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="quizProfileType" value="cliente">
+                                <span>Cliente</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="quizProfileType" value="trainer">
+                                <span>Personal Trainer</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-primary btn-block" onclick="submitQuiz()">Continuar para formulário
+                        completo</button>
+                </form>
+            </div>
+            <div id="quizSuccess" style="display: none;">
+                <div class="success-icon">✓</div>
+                <h2>Conta criada com sucesso!</h2>
+                <p>Agora vamos coletar informações detalhadas</p>
+                <p>para personalizar melhor seu treino</p>
+                <button class="btn-primary" onclick="proceedToDetailedForm()">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIGNUP PAGE (Hidden) -->
+    <div id="signup" class="signup-page">
+        <div class="signup-container">
+            <div class="signup-header">
+                <h1>Vamos começar</h1>
+                <p>Crie sua conta em minutos</p>
+            </div>
+
+            <!-- ETAPA 1: CRIAÇÃO DE CONTA -->
+            <div class="signup-step active" data-step="1">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 12.5%"></div>
+                </div>
+                <div class="step-content">
+                    <h2>Crie sua conta</h2>
+                    <form id="step1-form">
+                        <input type="text" placeholder="Nome completo" id="fullName" required>
+                        <input type="email" placeholder="Email" id="email" required>
+                        <input type="password" placeholder="Senha" id="password" required>
+                        <input type="password" placeholder="Confirmar senha" id="confirmPassword" required>
+
+                        <div class="form-group">
+                            <label>Você é:</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="profileType" value="cliente">
+                                    <span>Cliente</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="profileType" value="trainer">
+                                    <span>Personal Trainer</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-primary" onclick="validateStep(1)">Continuar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ETAPA 2: IDENTIFICAÇÃO -->
+            <div class="signup-step" data-step="2">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 25%"></div>
+                </div>
+                <div class="step-content">
+                    <h2>Identificação</h2>
+                    <form id="step2-form">
+                        <input type="number" placeholder="Idade" id="age" min="13" required>
+
+                        <label>Gênero:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="gender" value="masculino">
+                                Masculino</label>
+                            <label class="checkbox-option"><input type="radio" name="gender" value="feminino">
+                                Feminino</label>
+                            <label class="checkbox-option"><input type="radio" name="gender" value="outro">
+                                Outro</label>
+                        </div>
+
+                        <input type="text" placeholder="Profissão" id="profession" required>
+                        <input type="text" placeholder="E-mail ou WhatsApp" id="contact" required>
+
+                        <label>Tempo sentado por dia:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="sitTime" value="menos2"> Menos de 2
+                                horas</label>
+                            <label class="checkbox-option"><input type="radio" name="sitTime" value="2a4"> 2 a 4
+                                horas</label>
+                            <label class="checkbox-option"><input type="radio" name="sitTime" value="4a6"> 4 a 6
+                                horas</label>
+                            <label class="checkbox-option"><input type="radio" name="sitTime" value="6a8"> 6 a 8
+                                horas</label>
+                            <label class="checkbox-option"><input type="radio" name="sitTime" value="mais8"> Mais de 8
+                                horas</label>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-secondary" onclick="goToStep(1)">Voltar</button>
+                            <button type="button" class="btn-primary" onclick="validateStep(2)">Continuar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ETAPA 3: COMPOSIÇÃO CORPORAL -->
+            <div class="signup-step" data-step="3">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 37.5%"></div>
+                </div>
+                <div class="step-content">
+                    <h2>Composição Corporal</h2>
+                    <form id="step3-form">
+                        <input type="number" placeholder="Altura (cm)" id="height" required>
+                        <input type="number" placeholder="Peso (kg)" id="weight" required>
+
+                        <label>Como você se enxerga hoje?</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="bodyImage" value="abaixoPeso">
+                                Abaixo do peso</label>
+                            <label class="checkbox-option"><input type="radio" name="bodyImage" value="pesoNormal"> Peso
+                                normal</label>
+                            <label class="checkbox-option"><input type="radio" name="bodyImage" value="sobrepeso">
+                                Sobrepeso</label>
+                            <label class="checkbox-option"><input type="radio" name="bodyImage" value="obeso">
+                                Obeso</label>
+                            <label class="checkbox-option"><input type="radio" name="bodyImage" value="naoSei"> Não sei
+                                avaliar</label>
+                        </div>
+
+                        <label>Regiões que deseja melhorar:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="checkbox" name="targetRegions" value="peito">
+                                Peito</label>
+                            <label class="checkbox-option"><input type="checkbox" name="targetRegions" value="ombros">
+                                Ombros</label>
+                            <label class="checkbox-option"><input type="checkbox" name="targetRegions" value="abdomen">
+                                Abdômen</label>
+                            <label class="checkbox-option"><input type="checkbox" name="targetRegions"
+                                    value="posteriorCoxa"> Posterior de coxa</label>
+                            <label class="checkbox-option"><input type="checkbox" name="targetRegions"
+                                    value="panturrilhas"> Panturrilhas</label>
+                            <label class="checkbox-option"><input type="checkbox" name="targetRegions" value="postura">
+                                Postura</label>
+                            <label class="checkbox-option"><input type="checkbox" name="targetRegions" value="costas">
+                                Costas</label>
+                            <label class="checkbox-option"><input type="checkbox" name="targetRegions" value="bracos">
+                                Braços</label>
+                            <label class="checkbox-option"><input type="checkbox" name="targetRegions"
+                                    value="quadriceps"> Quadríceps</label>
+                            <label class="checkbox-option"><input type="checkbox" name="targetRegions" value="gluteos">
+                                Glúteos</label>
+                            <label class="checkbox-option"><input type="checkbox" name="targetRegions"
+                                    value="mobilidade"> Mobilidade</label>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-secondary" onclick="goToStep(2)">Voltar</button>
+                            <button type="button" class="btn-primary" onclick="validateStep(3)">Continuar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ETAPA 4: HISTÓRICO DE TREINO -->
+            <div class="signup-step" data-step="4">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+                <div class="step-content">
+                    <h2>Histórico de Treino</h2>
+                    <form id="step4-form">
+                        <label>Você treina atualmente?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="currentlyTrains" value="sim"
+                                    onchange="toggleTrainingFrequency()">
+                                <span>Sim</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="currentlyTrains" value="nao"
+                                    onchange="toggleTrainingFrequency()">
+                                <span>Não</span>
+                            </label>
+                        </div>
+
+                        <!-- Se SIM -->
+                        <div id="trainingFrequencySection" style="display:none;">
+                            <label>Frequência de treino:</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-option"><input type="radio" name="trainingFrequency" value="1x">
+                                    1x por semana</label>
+                                <label class="checkbox-option"><input type="radio" name="trainingFrequency" value="2x">
+                                    2x por semana</label>
+                                <label class="checkbox-option"><input type="radio" name="trainingFrequency" value="3x">
+                                    3x por semana</label>
+                                <label class="checkbox-option"><input type="radio" name="trainingFrequency" value="4x">
+                                    4x por semana</label>
+                                <label class="checkbox-option"><input type="radio" name="trainingFrequency" value="5x">
+                                    5x por semana</label>
+                                <label class="checkbox-option"><input type="radio" name="trainingFrequency" value="6x">
+                                    6x ou mais</label>
+                            </div>
+
+                            <label>Tipos de treino já realizados:</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-option"><input type="checkbox" name="trainingTypes"
+                                        value="musculacao"> Musculação</label>
+                                <label class="checkbox-option"><input type="checkbox" name="trainingTypes"
+                                        value="crossfit"> Crossfit</label>
+                                <label class="checkbox-option"><input type="checkbox" name="trainingTypes"
+                                        value="lutas"> Lutas</label>
+                                <label class="checkbox-option"><input type="checkbox" name="trainingTypes" value="yoga">
+                                    Yoga</label>
+                                <label class="checkbox-option"><input type="checkbox" name="trainingTypes"
+                                        value="esportesColetivos"> Esportes coletivos</label>
+                                <label class="checkbox-option"><input type="checkbox" name="trainingTypes"
+                                        value="funcional"> Funcional</label>
+                                <label class="checkbox-option"><input type="checkbox" name="trainingTypes"
+                                        value="corrida"> Corrida</label>
+                                <label class="checkbox-option"><input type="checkbox" name="trainingTypes"
+                                        value="pilates"> Pilates</label>
+                                <label class="checkbox-option"><input type="checkbox" name="trainingTypes" value="hiit">
+                                    HIIT</label>
+                            </div>
+                        </div>
+
+                        <!-- Se NÃO -->
+                        <div id="inactiveSection" style="display:none;">
+                            <label>Há quanto tempo está parado?</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-option"><input type="radio" name="inactiveTime"
+                                        value="naoEstouParado"> Não estou parado</label>
+                                <label class="checkbox-option"><input type="radio" name="inactiveTime"
+                                        value="menos1mes"> Menos de 1 mês</label>
+                                <label class="checkbox-option"><input type="radio" name="inactiveTime" value="1a3meses">
+                                    1 a 3 meses</label>
+                                <label class="checkbox-option"><input type="radio" name="inactiveTime" value="3a6meses">
+                                    3 a 6 meses</label>
+                                <label class="checkbox-option"><input type="radio" name="inactiveTime"
+                                        value="6a12meses"> 6 a 12 meses</label>
+                                <label class="checkbox-option"><input type="radio" name="inactiveTime" value="mais1ano">
+                                    Mais de 1 ano</label>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-secondary" onclick="goToStep(3)">Voltar</button>
+                            <button type="button" class="btn-primary" onclick="validateStep(4)">Continuar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ETAPA 5: LIMITAÇÕES E SEGURANÇA -->
+            <div class="signup-step" data-step="5">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 62.5%"></div>
+                </div>
+                <div class="step-content">
+                    <h2>Limitações e Segurança</h2>
+                    <form id="step5-form">
+                        <textarea id="currentPains" placeholder="Dores atuais (descreva)"></textarea>
+
+                        <label for="painScale">Escala de dor (0-10):</label>
+                        <input type="range" id="painScale" min="0" max="10" value="0" oninput="updatePainValue()">
+                        <span id="painValue">0</span>
+
+                        <textarea id="injuries" placeholder="Lesões (descreva)"></textarea>
+                        <textarea id="surgeries" placeholder="Cirurgias (descreva)"></textarea>
+
+                        <label>Possui restrição médica?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="medicalRestriction" value="sim">
+                                <span>Sim</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="medicalRestriction" value="nao">
+                                <span>Não</span>
+                            </label>
+                        </div>
+
+                        <label>Possui liberação médica?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="medicalApproval" value="sim">
+                                <span>Sim</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="medicalApproval" value="nao">
+                                <span>Não</span>
+                            </label>
+                        </div>
+
+                        <label>Problemas articulares/posturais:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="checkbox" name="jointProblems" value="lombar">
+                                Lombar</label>
+                            <label class="checkbox-option"><input type="checkbox" name="jointProblems" value="quadril">
+                                Quadril</label>
+                            <label class="checkbox-option"><input type="checkbox" name="jointProblems" value="cervical">
+                                Cervical</label>
+                            <label class="checkbox-option"><input type="checkbox" name="jointProblems" value="joelho">
+                                Joelho</label>
+                            <label class="checkbox-option"><input type="checkbox" name="jointProblems" value="ombro">
+                                Ombro</label>
+                            <label class="checkbox-option"><input type="checkbox" name="jointProblems"
+                                    value="tornozelo"> Tornozelo</label>
+                            <label class="checkbox-option"><input type="checkbox" name="jointProblems" value="nenhum">
+                                Nenhum</label>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-secondary" onclick="goToStep(4)">Voltar</button>
+                            <button type="button" class="btn-primary" onclick="validateStep(5)">Continuar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ETAPA 6: OBJETIVOS -->
+            <div class="signup-step" data-step="6">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%"></div>
+                </div>
+                <div class="step-content">
+                    <h2>Seus Objetivos</h2>
+                    <form id="step6-form">
+                        <label>Objetivo principal:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="mainGoal" value="emagrecimento">
+                                Emagrecimento</label>
+                            <label class="checkbox-option"><input type="radio" name="mainGoal" value="hipertrofia">
+                                Hipertrofia</label>
+                            <label class="checkbox-option"><input type="radio" name="mainGoal" value="saude">
+                                Saúde</label>
+                            <label class="checkbox-option"><input type="radio" name="mainGoal" value="condicionamento">
+                                Condicionamento</label>
+                            <label class="checkbox-option"><input type="radio" name="mainGoal" value="performance">
+                                Performance</label>
+                            <label class="checkbox-option"><input type="radio" name="mainGoal" value="mobilidade">
+                                Mobilidade</label>
+                        </div>
+
+                        <label>Objetivo secundário:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="secondaryGoal" value="">
+                                Nenhum</label>
+                            <label class="checkbox-option"><input type="radio" name="secondaryGoal"
+                                    value="emagrecimento"> Emagrecimento</label>
+                            <label class="checkbox-option"><input type="radio" name="secondaryGoal" value="hipertrofia">
+                                Hipertrofia</label>
+                            <label class="checkbox-option"><input type="radio" name="secondaryGoal" value="saude">
+                                Saúde</label>
+                            <label class="checkbox-option"><input type="radio" name="secondaryGoal"
+                                    value="condicionamento"> Condicionamento</label>
+                            <label class="checkbox-option"><input type="radio" name="secondaryGoal" value="performance">
+                                Performance</label>
+                            <label class="checkbox-option"><input type="radio" name="secondaryGoal" value="mobilidade">
+                                Mobilidade</label>
+                        </div>
+
+                        <label>Prazo desejado:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="deadline" value="1mes"> 1
+                                mês</label>
+                            <label class="checkbox-option"><input type="radio" name="deadline" value="3meses"> 3
+                                meses</label>
+                            <label class="checkbox-option"><input type="radio" name="deadline" value="6meses"> 6
+                                meses</label>
+                            <label class="checkbox-option"><input type="radio" name="deadline" value="1ano"> 1
+                                ano</label>
+                            <label class="checkbox-option"><input type="radio" name="deadline" value="semPrazo"> Sem
+                                prazo</label>
+                        </div>
+
+                        <label for="priority">Prioridade (1 a 5):</label>
+                        <input type="range" id="priority" min="1" max="5" value="3" oninput="updatePriorityValue()">
+                        <span id="priorityValue">3</span>
+
+                        <textarea id="specificEvent" placeholder="Treina para evento específico? (descreva)"></textarea>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-secondary" onclick="goToStep(5)">Voltar</button>
+                            <button type="button" class="btn-primary" onclick="validateStep(6)">Continuar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ETAPA 7: HÁBITOS E COMPORTAMENTO -->
+            <div class="signup-step" data-step="7">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 87.5%"></div>
+                </div>
+                <div class="step-content">
+                    <h2>Hábitos e Comportamento</h2>
+                    <form id="step7-form">
+                        <label>Horas de sono:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="sleepHours" value="menos5"> &lt;
+                                5h</label>
+                            <label class="checkbox-option"><input type="radio" name="sleepHours" value="5a6">
+                                5–6h</label>
+                            <label class="checkbox-option"><input type="radio" name="sleepHours" value="6a7">
+                                6–7h</label>
+                            <label class="checkbox-option"><input type="radio" name="sleepHours" value="7a8">
+                                7–8h</label>
+                            <label class="checkbox-option"><input type="radio" name="sleepHours" value="mais8">
+                                8h+</label>
+                        </div>
+
+                        <label>Avaliação da alimentação:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="foodQuality" value="muitoRuim">
+                                Muito ruim</label>
+                            <label class="checkbox-option"><input type="radio" name="foodQuality" value="ruim">
+                                Ruim</label>
+                            <label class="checkbox-option"><input type="radio" name="foodQuality" value="regular">
+                                Regular</label>
+                            <label class="checkbox-option"><input type="radio" name="foodQuality" value="boa">
+                                Boa</label>
+                            <label class="checkbox-option"><input type="radio" name="foodQuality" value="muitoBoa">
+                                Muito boa</label>
+                        </div>
+
+                        <label>Consumo de água:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="waterIntake" value="menos1L"> &lt;
+                                1L</label>
+                            <label class="checkbox-option"><input type="radio" name="waterIntake" value="1a2L">
+                                1–2L</label>
+                            <label class="checkbox-option"><input type="radio" name="waterIntake" value="2a3L">
+                                2–3L</label>
+                            <label class="checkbox-option"><input type="radio" name="waterIntake" value="mais3L">
+                                3L+</label>
+                        </div>
+
+                        <label>Nível de estresse:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="stressLevel" value="baixo">
+                                Baixo</label>
+                            <label class="checkbox-option"><input type="radio" name="stressLevel" value="moderado">
+                                Moderado</label>
+                            <label class="checkbox-option"><input type="radio" name="stressLevel" value="alto">
+                                Alto</label>
+                        </div>
+
+                        <label>Álcool / Cigarro:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="substanceUse" value="naoConsumo">
+                                Não consumo</label>
+                            <label class="checkbox-option"><input type="radio" name="substanceUse"
+                                    value="alcoolOcasional"> Álcool ocasionalmente</label>
+                            <label class="checkbox-option"><input type="radio" name="substanceUse"
+                                    value="alcoolFrequente"> Álcool frequentemente</label>
+                            <label class="checkbox-option"><input type="radio" name="substanceUse"
+                                    value="cigarroOcasional"> Cigarro ocasionalmente</label>
+                            <label class="checkbox-option"><input type="radio" name="substanceUse"
+                                    value="cigarroFrequente"> Cigarro frequentemente</label>
+                            <label class="checkbox-option"><input type="radio" name="substanceUse" value="ambos"> Álcool
+                                e cigarro</label>
+                        </div>
+
+                        <label>Principal motivação:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="mainMotivation" value="resultados">
+                                Resultados</label>
+                            <label class="checkbox-option"><input type="radio" name="mainMotivation" value="saude">
+                                Saúde</label>
+                            <label class="checkbox-option"><input type="radio" name="mainMotivation" value="estetica">
+                                Estética</label>
+                            <label class="checkbox-option"><input type="radio" name="mainMotivation" value="disciplina">
+                                Disciplina</label>
+                            <label class="checkbox-option"><input type="radio" name="mainMotivation" value="bemEstar">
+                                Bem-estar</label>
+                            <label class="checkbox-option"><input type="radio" name="mainMotivation"
+                                    value="performance"> Performance</label>
+                        </div>
+
+                        <label>Preferência de instrução:</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="instructionStyle" value="detalhado">
+                                <span>Explicado em detalhes</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="instructionStyle" value="diretoAoPonto">
+                                <span>Direto ao ponto</span>
+                            </label>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-secondary" onclick="goToStep(6)">Voltar</button>
+                            <button type="button" class="btn-primary" onclick="validateStep(7)">Continuar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ETAPA 8: LOGÍSTICA -->
+            <div class="signup-step" data-step="8">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+                <div class="step-content">
+                    <h2>Logística de Treino</h2>
+                    <form id="step8-form">
+                        <label>Onde pretende treinar?</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="trainingLocation" value="academia">
+                                Academia</label>
+                            <label class="checkbox-option"><input type="radio" name="trainingLocation" value="casa">
+                                Casa</label>
+                            <label class="checkbox-option"><input type="radio" name="trainingLocation" value="estudio">
+                                Estúdio</label>
+                            <label class="checkbox-option"><input type="radio" name="trainingLocation" value="arLivre">
+                                Ar livre</label>
+                            <label class="checkbox-option"><input type="radio" name="trainingLocation"
+                                    value="condominio"> Condomínio</label>
+                        </div>
+
+                        <label>Tempo por sessão:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="sessionDuration" value="30min"> 30
+                                min</label>
+                            <label class="checkbox-option"><input type="radio" name="sessionDuration" value="45min"> 45
+                                min</label>
+                            <label class="checkbox-option"><input type="radio" name="sessionDuration" value="60min"> 60
+                                min</label>
+                            <label class="checkbox-option"><input type="radio" name="sessionDuration" value="90min"> 90
+                                min</label>
+                        </div>
+
+                        <label>Horário preferido:</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="preferredTime" value="manha">
+                                <span>Manhã</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="preferredTime" value="tarde">
+                                <span>Tarde</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="preferredTime" value="noite">
+                                <span>Noite</span>
+                            </label>
+                        </div>
+
+                        <label>Tipo de treino preferido:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-option"><input type="radio" name="trainingType" value="musculacao">
+                                Musculação</label>
+                            <label class="checkbox-option"><input type="radio" name="trainingType" value="funcional">
+                                Funcional</label>
+                            <label class="checkbox-option"><input type="radio" name="trainingType" value="cardio">
+                                Cardio</label>
+                            <label class="checkbox-option"><input type="radio" name="trainingType" value="mobilidade">
+                                Mobilidade</label>
+                            <label class="checkbox-option"><input type="radio" name="trainingType" value="hiit">
+                                HIIT</label>
+                            <label class="checkbox-option"><input type="radio" name="trainingType" value="mixCombinado">
+                                Mix combinado</label>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-secondary" onclick="goToStep(7)">Voltar</button>
+                            <button type="button" class="btn-primary" onclick="validateStep(8)">Continuar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ETAPA 9: COMENTÁRIOS FINAIS -->
+            <div class="signup-step" data-step="9">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+                <div class="step-content">
+                    <h2>Comentários Finais</h2>
+                    <form id="step9-form">
+                        <textarea id="finalComments"
+                            placeholder="Diga algo que não foi perguntado, mas considera importante."
+                            style="min-height: 150px;"></textarea>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-secondary" onclick="goToStep(8)">Voltar</button>
+                            <button type="submit" class="btn-primary" onclick="submitForm()">Enviar formulário</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- MENSAGEM DE SUCESSO -->
+            <div id="successMessage" class="success-message">
+                <div class="success-content">
+                    <h2>✓ Seu formulário foi recebido</h2>
+                    <p>Estamos montando seu treino personalizado</p>
+                    <p>Em breve um personal entrará em contato</p>
+                    <button class="btn-primary" onclick="closeSignup()">Voltar ao início</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+</body>
+
+</html>
