@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Meu Treino</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/dashboard-responsive.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- TELA 1: LOGIN (INICIAL) -->
+    <div id="loginContainer" class="login-container">
+        <div class="login-wrapper">
+            <div class="login-box">
+                <h1 class="login-title">Meu Treino</h1>
+                <p class="login-subtitle">Acesse sua conta</p>
+
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="usuario@teste.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    </div>
+
+                    <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+                    <button type="submit" class="btn-primary btn-block">Entrar</button>
+                </form>
+
+                <p class="login-footer">Credenciais de teste: usuario@teste.com / teste12345</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA 2: DASHBOARD -->
+    <div id="dashboardContainer" class="dashboard-container" style="display: none;">
+
+        <!-- OVERLAY MOBILE -->
+        <div id="sidebarOverlay" class="sidebar-overlay" onclick="closeMobileSidebar()"></div>
+
+        <!-- SIDEBAR ESQUERDA -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">Meu Treino</h2>
+            </div>
+
+            <div class="sidebar-user">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"
+                    alt="Matheus Roldan" class="user-avatar">
+                <h3 class="user-name">Matheus Roldan</h3>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active" data-section="meuPlano" onclick="closeMobileSidebar()">
+                    <span class="menu-icon">📋</span>
+                    <span class="menu-text">Meu Plano</span>
+                </a>
+                <a href="#" class="menu-item" data-section="treinos" onclick="closeMobileSidebar(); return false;">
+                    <span class="menu-icon">🏋️</span>
+                    <span class="menu-text">Treinos</span>
+                </a>
+                <a href="#" class="menu-item menu-mais" data-toggle="submenu" onclick="toggleSubmenuMobile(event)">
+                    <span class="menu-icon">⋯</span>
+                    <span class="menu-text">Mais</span>
+                    <span class="menu-arrow">›</span>
+                </a>
+                <div class="submenu" id="submenu" style="display: none;">
+                    <a href="#" class="menu-item submenu-item" data-section="refeicoes" onclick="closeMobileSidebar()">
+                        <span class="menu-icon">🍎</span>
+                        <span class="menu-text">Refeições</span>
+                    </a>
+                    <a href="#" class="menu-item submenu-item" data-section="desafios" onclick="closeMobileSidebar()">
+                        <span class="menu-icon">🎯</span>
+                        <span class="menu-text">Desafios</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- ÁREA CENTRAL -->
+        <main class="dashboard-main">
+
+            <!-- HEADER DO DASHBOARD -->
+            <header class="dashboard-header">
+                <button class="menu-toggle-mobile" onclick="toggleMobileSidebar()">☰</button>
+                <div class="dashboard-info">
+                    <div class="info-item">
+                        <span class="info-label">Objetivo</span>
+                        <span class="info-value">Ganhar massa</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Peso alvo</span>
+                        <span class="info-value">90kg</span>
+                    </div>
+                </div>
+                <button class="btn-logout" onclick="logout()">Sair</button>
+            </header>
+
+            <!-- CONTEÚDO PRINCIPAL -->
+            <div class="dashboard-content">
+
+                <!-- SEÇÃO: MEU PLANO (Padrão) -->
+                <section id="meuPlano-section" class="content-section active">
+                    <div class="section-header">
+                        <h2>Seu treino de hoje</h2>
+                    </div>
+
+                    <!-- MÍDIA PRINCIPAL -->
+                    <div class="workout-media">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=800&fit=crop"
+                            alt="Home workout">
+                    </div>
+
+                    <!-- INFORMAÇÕES DO EXERCÍCIO -->
+                    <div class="workout-info">
+                        <div class="info-grid">
+                            <div class="info-card">
+                                <span class="info-label">Nome do exercício</span>
+                                <span class="info-value-large">Treino de Força</span>
+                            </div>
+                            <div class="info-card">
+                                <span class="info-label">Tempo estimado</span>
+                                <span class="info-value-large">45 min</span>
+                            </div>
+                            <div class="info-card">
+                                <span class="info-label">Repetições</span>
+                                <span class="info-value-large">3 x 10</span>
+                            </div>
+                            <div class="info-card">
+                                <span class="info-label">Séries</span>
+                                <span class="info-value-large">4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BOTÃO PRIMÁRIO -->
+                    <div class="button-container">
+                        <button class="btn-primary btn-large workout-button">Começar treino</button>
+                    </div>
+
+                    <!-- PROGRESSO -->
+                    <div class="progress-section">
+                        <h3>Seu progresso</h3>
+                        <div class="progress-wrapper">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 42%;"></div>
+                            </div>
+                        </div>
+                        <p class="progress-text">42% concluído este mês</p>
+
+                        <!-- SCROLL HORIZONTAL DE DIAS -->
+                        <div class="days-scroll-container">
+                            <div class="days-grid">
+                                <div class="day-card today" title="Hoje">1</div>
+                                <div class="day-card completed" title="Completo">2</div>
+                                <div class="day-card completed" title="Completo">3</div>
+                                <div class="day-card" title="Futuro">4</div>
+                                <div class="day-card completed" title="Completo">5</div>
+                                <div class="day-card" title="Futuro">6</div>
+                                <div class="day-card completed" title="Completo">7</div>
+                                <div class="day-card completed" title="Completo">8</div>
+                                <div class="day-card" title="Futuro">9</div>
+                                <div class="day-card" title="Futuro">10</div>
+                                <div class="day-card completed" title="Completo">11</div>
+                                <div class="day-card" title="Futuro">12</div>
+                                <div class="day-card" title="Futuro">13</div>
+                                <div class="day-card" title="Futuro">14</div>
+                                <div class="day-card completed" title="Completo">15</div>
+                                <div class="day-card completed" title="Completo">16</div>
+                                <div class="day-card" title="Futuro">17</div>
+                                <div class="day-card" title="Futuro">18</div>
+                                <div class="day-card completed" title="Completo">19</div>
+                                <div class="day-card" title="Futuro">20</div>
+                                <div class="day-card" title="Futuro">21</div>
+                                <div class="day-card" title="Futuro">22</div>
+                                <div class="day-card completed" title="Completo">23</div>
+                                <div class="day-card" title="Futuro">24</div>
+                                <div class="day-card" title="Futuro">25</div>
+                                <div class="day-card" title="Futuro">26</div>
+                                <div class="day-card completed" title="Completo">27</div>
+                                <div class="day-card" title="Futuro">28</div>
+                                <div class="day-card" title="Futuro">29</div>
+                                <div class="day-card" title="Futuro">30</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SEÇÃO: TREINOS -->
+                <section id="treinos-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Treinos</h2>
+                    </div>
+                    <div class="workouts-grid" id="workoutsGrid">
+                        <!-- Cards serão inseridos via JavaScript -->
+                    </div>
+                </section>
+
+                <!-- SEÇÃO: REFEIÇÕES -->
+                <section id="refeicoes-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Refeições</h2>
+                    </div>
+                    <div class="empty-state">
+                        <p>Seção de refeições em desenvolvimento</p>
+                    </div>
+                </section>
+
+                <!-- SEÇÃO: DESAFIOS -->
+                <section id="desafios-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Desafios</h2>
+                    </div>
+                    <div class="empty-state">
+                        <p>Seção de desafios em desenvolvimento</p>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="./js/dashboard.js"></script>
+</body>
+
+</html>
