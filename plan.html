@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano - Meu Treino</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/plan.css">
+    <link rel="stylesheet" href="./css/plan-responsive.css">
+</head>
+
+<body class="plan-page">
+
+    <!-- TELA 1: LOGIN -->
+    <div id="loginContainer" class="login-container">
+        <div class="login-wrapper">
+            <div class="login-box">
+                <h1 class="login-title">Meu Treino</h1>
+                <p class="login-subtitle">Acesse sua conta</p>
+
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="usuario@teste.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    </div>
+
+                    <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+                    <button type="submit" class="btn-primary btn-block">Entrar</button>
+                </form>
+
+                <p class="login-footer">Credenciais de teste: usuario@teste.com / teste12345</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA 2: PLANO -->
+    <div id="planContainer" class="plan-container" style="display: none;">
+
+        <!-- OVERLAY MOBILE -->
+        <div id="sidebarOverlay" class="sidebar-overlay" onclick="closeMobileSidebar()"></div>
+
+        <!-- SIDEBAR ESQUERDA -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">Meu Treino</h2>
+            </div>
+
+            <div class="sidebar-user">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"
+                    alt="Matheus Roldan" class="user-avatar">
+                <h3 class="user-name">Matheus Roldan</h3>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active" data-section="plan" onclick="closeMobileSidebar()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 11H3v2h6V11zM19 11h-6v2h6V11zM19 3h-6v2h6V3zM9 3H3v2h6V3z"/>
+                        <path d="M3 19h18v2H3z"/>
+                    </svg>
+                    <span class="menu-text">Meu Plano</span>
+                </a>
+                <a href="#" class="menu-item" data-section="progress" onclick="closeMobileSidebar(); return false;">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="3 3 7 17 11 11 16 17 21 3"/>
+                    </svg>
+                    <span class="menu-text">Progresso</span>
+                </a>
+                <a href="#" class="menu-item" data-section="more" onclick="closeMobileSidebar()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="5" r="1"></circle>
+                        <circle cx="12" cy="12" r="1"></circle>
+                        <circle cx="12" cy="19" r="1"></circle>
+                    </svg>
+                    <span class="menu-text">Mais</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- ÁREA CENTRAL -->
+        <main class="plan-main">
+
+            <!-- HEADER DO PLANO -->
+            <header class="plan-header plan-header-plan" id="planHeaderPlan">
+                <button class="menu-toggle-mobile" onclick="toggleMobileSidebar()">☰</button>
+                <div class="plan-header-content">
+                    <div class="program-info">
+                        <h1 class="program-name">Calisthenics</h1>
+                    </div>
+                    <div class="user-section">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop"
+                            alt="Avatar" class="user-avatar-header">
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTEÚDO PRINCIPAL -->
+            <div class="plan-content">
+
+                <!-- CARDS DE META (GRID 2 COLUNAS NO MOBILE) -->
+                <section class="plan-section targets-section">
+                    <div class="targets-grid">
+                        <div class="target-card">
+                            <svg class="target-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                            <span class="target-label">Objetivo Principal</span>
+                            <span class="target-value">Ganhar Massa</span>
+                        </div>
+                        <div class="target-card">
+                            <svg class="target-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3v18"></path>
+                                <path d="M6.5 7h11v10h-11z"></path>
+                                <path d="M4 18h16"></path>
+                            </svg>
+                            <span class="target-label">Meta de Peso</span>
+                            <span class="target-value">90 kg</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BARRA DE DIAS (SCROLLÁVEL) -->
+                <section class="plan-section days-section">
+                    <h2 class="section-title">Semana 1</h2>
+                    <div class="days-scroll-wrapper">
+                        <div class="days-scroll-container">
+                            <div class="day-item">
+                                <div class="day-badge today">seg</div>
+                                <div class="day-number">1</div>
+                                <div class="day-status completed"></div>
+                            </div>
+                            <div class="day-item">
+                                <div class="day-badge">ter</div>
+                                <div class="day-number">2</div>
+                                <div class="day-status completed"></div>
+                            </div>
+                            <div class="day-item">
+                                <div class="day-badge">qua</div>
+                                <div class="day-number">3</div>
+                                <div class="day-status"></div>
+                            </div>
+                            <div class="day-item">
+                                <div class="day-badge">qui</div>
+                                <div class="day-number">4</div>
+                                <div class="day-status completed"></div>
+                            </div>
+                            <div class="day-item">
+                                <div class="day-badge">sex</div>
+                                <div class="day-number">5</div>
+                                <div class="day-status"></div>
+                            </div>
+                            <div class="day-item">
+                                <div class="day-badge">sab</div>
+                                <div class="day-number">6</div>
+                                <div class="day-status completed"></div>
+                            </div>
+                            <div class="day-item">
+                                <div class="day-badge">dom</div>
+                                <div class="day-number">7</div>
+                                <div class="day-status"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CARD DO TREINO DO DIA -->
+                <section class="plan-section workout-section">
+                    <h2 class="section-title">Seu treino de hoje</h2>
+                    <div class="workout-card">
+                        <div class="workout-image">
+                            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop"
+                                alt="Treino de força">
+                        </div>
+                        <div class="workout-details">
+                            <h3 class="workout-title">Treino de Força Superior</h3>
+                            <div class="workout-meta">
+                                <span class="meta-item">
+                                    <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    <span class="meta-text">45 min</span>
+                                </span>
+                                <span class="meta-item">
+                                    <svg class="meta-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M14 4l6 6m-6-6l-4 4m4-4v12a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2z">
+                                        </path>
+                                    </svg>
+                                    <span class="meta-text">Barra, Pesos</span>
+                                </span>
+                            </div>
+                            <p class="workout-description">Desenvolvimento de força no trem superior com exercícios de
+                                base.</p>
+                            <button class="btn-primary btn-large btn-workout" onclick="startWorkout()">IR PARA O
+                                TREINO</button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- PROGRESSO SECTION -->
+            <div id="progressSection" style="display: none;" class="section-wrapper">
+
+                <!-- HEADER DO PROGRESSO -->
+                <header class="plan-header plan-header-progress" id="planHeaderProgress">
+                    <button class="menu-toggle-mobile" onclick="toggleMobileSidebar()">☰</button>
+                    <div class="plan-header-content">
+                        <div class="program-info">
+                            <h1 class="program-name">Progresso</h1>
+                        </div>
+                        <div class="user-section">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop"
+                                alt="Avatar" class="user-avatar-header">
+                        </div>
+                    </div>
+                </header>
+
+                <!-- CONTEÚDO DO PROGRESSO -->
+                <div class="plan-content">
+
+                    <!-- CARD DE PESO -->
+                    <section class="plan-section weight-card-section">
+                        <div class="weight-card">
+                            <div class="weight-header">
+                                <h2 class="weight-title">Seu Peso</h2>
+                                <span class="weight-month">Dezembro 2025</span>
+                            </div>
+                            <div class="weight-chart-container">
+                                <svg class="weight-chart" viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet">
+                                    <!-- Gráfico simples de linha -->
+                                    <polyline points="10,120 50,100 90,85 130,95 170,75 210,70 250,65" 
+                                        fill="none" stroke="#DC143C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <!-- Pontos -->
+                                    <circle cx="10" cy="120" r="3" fill="#DC143C" opacity="0.5"/>
+                                    <circle cx="50" cy="100" r="3" fill="#DC143C" opacity="0.6"/>
+                                    <circle cx="90" cy="85" r="3" fill="#DC143C" opacity="0.7"/>
+                                    <circle cx="130" cy="95" r="3" fill="#DC143C" opacity="0.7"/>
+                                    <circle cx="170" cy="75" r="3" fill="#DC143C" opacity="0.8"/>
+                                    <circle cx="210" cy="70" r="3" fill="#DC143C" opacity="0.8"/>
+                                    <circle cx="250" cy="65" r="3" fill="#DC143C" opacity="0.9"/>
+                                </svg>
+                            </div>
+                            <div class="weight-current">
+                                <span class="weight-label">Peso Atual</span>
+                                <span class="weight-value">94 kg</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- HISTÓRICO DE PROGRESSO -->
+                    <section class="plan-section progress-history-section">
+                        <h2 class="section-title">Histórico</h2>
+                        <div class="progress-history-grid">
+                            <div class="history-card">
+                                <span class="history-label">Peso Inicial</span>
+                                <span class="history-value">98 kg</span>
+                            </div>
+                            <div class="history-card">
+                                <span class="history-label">Peso Atual</span>
+                                <span class="history-value">94 kg</span>
+                            </div>
+                            <div class="history-card">
+                                <span class="history-label">Peso Alvo</span>
+                                <span class="history-value">85 kg</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- BOTÃO CTA -->
+                    <section class="plan-section cta-section">
+                        <button class="btn-add-weight" onclick="handleAddWeight()">+ Adicionar Peso</button>
+                    </section>
+
+                    <!-- CARDS DE MÉTRICAS -->
+                    <section class="plan-section metrics-section">
+                        <h2 class="section-title">Métricas do Dia</h2>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <svg class="metric-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
+                                    <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                                </svg>
+                                <div class="metric-content">
+                                    <span class="metric-label">Passos</span>
+                                    <span class="metric-value">8.340</span>
+                                    <span class="metric-meta">de 10.000</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                 <svg class="metric-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                     <circle cx="12" cy="12" r="10"></circle>
+                                     <path d="M12 6v6M8 12h8"></path>
+                                 </svg>
+                                 <div class="metric-content">
+                                     <span class="metric-label">Estresse</span>
+                                    <span class="metric-value">Baixo</span>
+                                    <span class="metric-meta">25%</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                 <svg class="metric-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                 </svg>
+                                 <div class="metric-content">
+                                     <span class="metric-label">Freq. Cardíaca</span>
+                                    <span class="metric-value">72 bpm</span>
+                                    <span class="metric-meta">Normal</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                 <svg class="metric-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                 </svg>
+                                 <div class="metric-content">
+                                     <span class="metric-label">Sono</span>
+                                    <span class="metric-value">7h 42min</span>
+                                    <span class="metric-meta">Ótimo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+            </div>
+
+            <!-- MAIS SECTION -->
+            <div id="moreSection" style="display: none;" class="section-wrapper">
+
+                <!-- HEADER DO MAIS -->
+                <header class="plan-header plan-header-more" id="planHeaderMore">
+                    <button class="menu-toggle-mobile" onclick="toggleMobileSidebar()">☰</button>
+                    <div class="plan-header-content">
+                        <div class="program-info">
+                            <h1 class="program-name">Mais</h1>
+                        </div>
+                        <div class="user-section">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop"
+                                alt="Avatar" class="user-avatar-header">
+                        </div>
+                    </div>
+                </header>
+
+                <!-- CONTEÚDO DO MAIS -->
+                <div class="plan-content">
+
+                    <!-- SEÇÃO: IMPULSIONE SEUS RESULTADOS -->
+                    <section class="plan-section boost-section">
+                        <h2 class="section-title">Impulsione seus resultados</h2>
+                        <div class="boost-cards">
+                            <!-- Card 1: Calisthenics Kit -->
+                            <div class="boost-card" onclick="handleBoostCardClick(this)">
+                                <div class="boost-card-header">
+                                    <h3 class="boost-card-title">Calisthenics Kit</h3>
+                                    <span class="badge badge-members">Só para membros</span>
+                                </div>
+                                <p class="boost-card-description">Programa completo de calistenia com progressões estruturadas</p>
+                                <div class="boost-card-footer">
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Card 2: MeuTreino Fitness Tracker -->
+                            <div class="boost-card" onclick="handleBoostCardClick(this)">
+                                <div class="boost-card-header">
+                                    <h3 class="boost-card-title">MeuTreino Fitness Tracker</h3>
+                                </div>
+                                <p class="boost-card-description">Acompanhe seu progresso com análises detalhadas em tempo real</p>
+                                <div class="boost-card-footer">
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Card 3: MeuTreino Smart Scale -->
+                            <div class="boost-card" onclick="handleBoostCardClick(this)">
+                                <div class="boost-card-header">
+                                    <h3 class="boost-card-title">MeuTreino Smart Scale</h3>
+                                </div>
+                                <p class="boost-card-description">Integração com balança inteligente para acompanhamento automático</p>
+                                <div class="boost-card-footer">
+                                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 18 15 12 9 6"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SEÇÃO: SEU PROGRESSO -->
+                    <section class="plan-section progress-items-section">
+                        <h2 class="section-title">Seu progresso</h2>
+                        <div class="progress-items-list">
+                            <!-- Item 1: Registrar calorias -->
+                            <div class="progress-item" onclick="handleProgressItemClick(this)">
+                                <div class="progress-item-content">
+                                    <svg class="progress-item-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="1"></circle>
+                                        <path d="M12 11v2"></path>
+                                        <path d="M9 13h6"></path>
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                    </svg>
+                                    <span class="progress-item-label">Registrar calorias</span>
+                                </div>
+                                <svg class="progress-item-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+
+                            <!-- Item 2: Beber água -->
+                            <div class="progress-item" onclick="handleProgressItemClick(this)">
+                                <div class="progress-item-content">
+                                    <svg class="progress-item-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                                    </svg>
+                                    <span class="progress-item-label">Beber água</span>
+                                </div>
+                                <svg class="progress-item-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+
+                            <!-- Item 3: Alcançar meta de passos -->
+                            <div class="progress-item" onclick="handleProgressItemClick(this)">
+                                <div class="progress-item-content">
+                                    <svg class="progress-item-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="12 7 12 17"></polyline>
+                                        <polyline points="8 11 12 7 16 11"></polyline>
+                                    </svg>
+                                    <span class="progress-item-label">Alcançar meta de passos</span>
+                                </div>
+                                <svg class="progress-item-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+
+                            <!-- Item 4: Fazer seu treino -->
+                            <div class="progress-item" onclick="handleProgressItemClick(this)">
+                                <div class="progress-item-content">
+                                    <svg class="progress-item-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                    <span class="progress-item-label">Fazer seu treino</span>
+                                </div>
+                                <svg class="progress-item-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+
+                            <!-- Item 5: Jejum -->
+                            <div class="progress-item" onclick="handleProgressItemClick(this)">
+                                <div class="progress-item-content">
+                                    <svg class="progress-item-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2v20"></path>
+                                        <path d="M2 12h20"></path>
+                                    </svg>
+                                    <span class="progress-item-label">Jejum</span>
+                                </div>
+                                <svg class="progress-item-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SEÇÃO: SEUS POWER-UPS -->
+                    <section class="plan-section powerups-section">
+                        <h2 class="section-title">Seus Power-Ups</h2>
+                        <div class="powerups-container">
+                            <div class="powerup-placeholder">
+                                <p>Nenhum power-up ativado no momento</p>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+            </div>
+
+            <!-- BOTTOM NAVIGATION (MOBILE) -->
+             <nav class="bottom-nav">
+                  <a href="#" class="bottom-nav-item active" onclick="switchSection(event, 'plan')">
+                      <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="3" width="7" height="7"></rect>
+                          <rect x="14" y="3" width="7" height="7"></rect>
+                          <rect x="14" y="14" width="7" height="7"></rect>
+                          <rect x="3" y="14" width="7" height="7"></rect>
+                      </svg>
+                      <span class="nav-label">Plano</span>
+                  </a>
+                  <a href="#" class="bottom-nav-item" onclick="switchSection(event, 'progress')">
+                      <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="3 15 8 7 13 4 18 6 21 3"></polyline>
+                          <line x1="3" y1="21" x2="21" y2="21"></line>
+                      </svg>
+                      <span class="nav-label">Progresso</span>
+                  </a>
+                  <a href="#" class="bottom-nav-item" onclick="switchSection(event, 'more')">
+                      <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="5" r="1"></circle>
+                          <circle cx="12" cy="12" r="1"></circle>
+                          <circle cx="12" cy="19" r="1"></circle>
+                      </svg>
+                      <span class="nav-label">Mais</span>
+                  </a>
+              </nav>
+
+            </main>
+
+            </div>
+
+            <!-- TELA 3: EXECUÇÃO DO TREINO (Fazer o Treino) -->
+            <div id="workoutExecutionScreen" class="workout-execution-screen" style="display: none;">
+
+            <!-- HERO DO TREINO -->
+            <div class="workout-hero">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop" alt="Treino de Força" class="hero-image">
+                <div class="hero-overlay"></div>
+
+                <!-- BOTÃO VOLTAR -->
+                <button class="hero-back-btn" onclick="goBackToPlan()" title="Voltar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- CONTEÚDO PRINCIPAL -->
+            <div class="execution-content">
+
+            <!-- CARD PRINCIPAL DO TREINO -->
+            <section class="execution-card workout-info-card">
+                <h1 class="workout-name">Treino de Força Superior</h1>
+                <div class="workout-meta-row">
+                    <span class="meta-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>45 min</span>
+                    </span>
+                    <span class="meta-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                        <span>113 kcal</span>
+                    </span>
+                </div>
+                <button class="btn-start-workout" onclick="handleStartTraining()">
+                    <span>COMECE A TREINAR</span>
+                </button>
+            </section>
+
+            <!-- AVISO DE SAÚDE -->
+            <section class="execution-card health-warning-card">
+                <div class="card-header-collapsible">
+                    <svg class="warning-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span class="warning-text">Consulte seu médico antes de começar</span>
+                    <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- ÁREAS DE FOCO -->
+            <section class="execution-card focus-areas-card">
+                <div class="focus-item">
+                    <span class="focus-label">Áreas de Foco:</span>
+                    <span class="focus-value">Corpo Inteiro</span>
+                </div>
+                <svg class="nav-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </section>
+
+            <!-- UPSELL DISCRETO -->
+            <section class="execution-card kit-upsell-card">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=80&h=80&fit=crop" alt="Calisthenics Kit" class="kit-thumbnail">
+                <div class="kit-content">
+                    <div class="kit-header">
+                        <span class="kit-title">Calisthenics Kit</span>
+                        <span class="kit-badge">-20%</span>
+                    </div>
+                    <span class="kit-description">Complementos premium</span>
+                </div>
+                <svg class="kit-lock" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </section>
+
+            <!-- EQUIPAMENTO NECESSÁRIO -->
+            <section class="execution-card equipment-card">
+                <h3 class="card-section-title">Equipamento Necessário</h3>
+                <div class="equipment-item">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=80&h=80&fit=crop" alt="Tapete" class="equipment-thumbnail">
+                    <span class="equipment-name">Tapete</span>
+                </div>
+            </section>
+
+            <!-- LISTA DE EXERCÍCIOS -->
+            <section class="execution-card exercises-section">
+                <h3 class="card-section-title">Exercícios</h3>
+                <div class="exercises-list">
+                    <div class="exercise-item">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=80&h=80&fit=crop" alt="Flexão" class="exercise-thumbnail">
+                        <div class="exercise-details">
+                            <span class="exercise-name">Flexão de Braço</span>
+                            <span class="exercise-duration">3 séries x 10 reps</span>
+                        </div>
+                        <button class="btn-exercise-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="exercise-item">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=80&h=80&fit=crop" alt="Agachamento" class="exercise-thumbnail">
+                        <div class="exercise-details">
+                            <span class="exercise-name">Agachamento</span>
+                            <span class="exercise-duration">3 séries x 15 reps</span>
+                        </div>
+                        <button class="btn-exercise-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="exercise-item">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=80&h=80&fit=crop" alt="Rosca Direta" class="exercise-thumbnail">
+                        <div class="exercise-details">
+                            <span class="exercise-name">Rosca Direta</span>
+                            <span class="exercise-duration">3 séries x 12 reps</span>
+                        </div>
+                        <button class="btn-exercise-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            </div>
+
+            </div>
+
+            <!-- TELA 4: TREINO EM ANDAMENTO (Em Execução) -->
+            <div id="workoutInProgressScreen" class="workout-in-progress-screen" style="display: none;">
+
+                <!-- HEADER COM CLOSE BUTTON -->
+                <header class="workout-progress-header">
+                    <button class="btn-close-workout" onclick="handleCloseWorkout()" title="Fechar treino">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </header>
+
+                <!-- CONTEÚDO DO TREINO -->
+                <div class="workout-progress-content">
+
+                    <!-- VIDEO/THUMBNAIL DO EXERCÍCIO -->
+                    <div class="exercise-hero">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop" alt="Exercício" class="exercise-hero-image">
+                        <div class="exercise-hero-overlay"></div>
+                    </div>
+
+                    <!-- TIMER E FASE + CONTROLES NA MESMA LINHA -->
+                    <div class="timer-wrapper">
+                        <div class="timer-section">
+                            <button class="btn-control btn-previous" onclick="handlePrevious()" disabled>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                            <div class="timer-center">
+                                <div class="timer-display">0:02</div>
+                                <div class="timer-phase">AQUECIMENTO</div>
+                            </div>
+                            <button class="btn-control btn-next" onclick="handleNext()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- BOTÃO PULAR -->
+                    <button class="btn-skip-exercise">PULAR</button>
+
+                    <!-- BARRA DE PROGRESSO SEGMENTADA -->
+                    <div class="progress-bar-container">
+                        <div class="progress-segment active"></div>
+                        <div class="progress-segment active"></div>
+                        <div class="progress-segment"></div>
+                        <div class="progress-segment"></div>
+                        <div class="progress-segment"></div>
+                    </div>
+
+                    <!-- MÉTRICAS -->
+                    <div class="metrics-section">
+                        <div class="metric-item">
+                            <span class="metric-label">Tempo</span>
+                            <span class="metric-value">00:07</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Status</span>
+                            <span class="metric-value">ESGOTADO</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Calorias</span>
+                            <span class="metric-value">0 KCAL</span>
+                        </div>
+                    </div>
+
+                    <!-- CARD DO PRÓXIMO EXERCÍCIO -->
+                    <div class="next-exercise-card">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=80&h=80&fit=crop" alt="Próximo exercício" class="next-exercise-thumbnail">
+                        <div class="next-exercise-info">
+                            <span class="next-exercise-label">Próximo</span>
+                            <span class="next-exercise-name">Agachamento</span>
+                            <span class="next-exercise-duration">0:30</span>
+                        </div>
+                        <svg class="next-exercise-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TELA 5: CONFIRMAÇÃO DE SAÍDA -->
+            <div id="workoutExitScreen" class="workout-exit-screen" style="display: none;">
+
+                <!-- HEADER -->
+                <header class="exit-header">
+                    <h1 class="exit-title">Já está saindo do treino?</h1>
+                    <p class="exit-subtitle">Nos ajude a melhorar</p>
+                </header>
+
+                <!-- CONTEÚDO -->
+                <div class="exit-content">
+
+                    <!-- MOTIVOS -->
+                    <div class="exit-reasons">
+                        <div class="reason-card" onclick="selectReason(this, 'hard')">
+                            <svg class="reason-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            <span class="reason-title">Muito difícil</span>
+                            <span class="reason-subtitle">Quero um treino mais fácil</span>
+                        </div>
+
+                        <div class="reason-card" onclick="selectReason(this, 'long')">
+                            <svg class="reason-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span class="reason-title">Muito longo</span>
+                            <span class="reason-subtitle">Quero passar menos tempo me exercitando</span>
+                        </div>
+
+                        <div class="reason-card" onclick="selectReason(this, 'learning')">
+                            <svg class="reason-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v20"></path>
+                                <path d="M2 12h20"></path>
+                            </svg>
+                            <span class="reason-title">Só estou conhecendo</span>
+                            <span class="reason-subtitle">Quero me exercitar mais tarde</span>
+                        </div>
+
+                        <div class="reason-card" onclick="selectReason(this, 'other')">
+                            <svg class="reason-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="12" cy="5" r="1"></circle>
+                                <circle cx="12" cy="19" r="1"></circle>
+                            </svg>
+                            <span class="reason-title">Outros</span>
+                            <span class="reason-subtitle">Motivos pessoais</span>
+                        </div>
+                    </div>
+
+                    <!-- BOTÃO ENVIAR -->
+                    <button class="btn-submit-exit" onclick="handleSubmitExit()">ENVIAR</button>
+
+                </div>
+
+            </div>
+
+            <!-- MODAL DE CONFIRMAÇÃO DE SAÍDA -->
+            <div id="confirmExitModal" class="confirm-exit-modal" style="display: none;">
+                <div class="modal-overlay" onclick="closeConfirmExitModal()"></div>
+                <div class="modal-wrapper">
+                    <div class="modal-content">
+                        <h2 class="modal-title">Encerrar o treino?</h2>
+                        <div class="modal-buttons">
+                            <button class="btn-modal btn-modal-cancel" onclick="closeConfirmExitModal()">Não</button>
+                            <button class="btn-modal btn-modal-confirm" onclick="confirmExit()">Sim</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="./config.js"></script>
+            <script src="./js/plan.js"></script>
+            </body>
+
+            </html>
+

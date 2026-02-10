@@ -1,0 +1,1203 @@
+/* ============================================
+   PLANO - RESPONSIVIDADE
+   ============================================ */
+
+/* ============================================
+   MOBILE M (375px)
+   ============================================ */
+@media (min-width: 375px) {
+    .targets-grid {
+        gap: 14px;
+    }
+
+    .target-card {
+        padding: 20px 18px;
+    }
+
+    .target-icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 12px;
+    }
+
+    .target-value {
+        font-size: 22px;
+    }
+
+    .days-scroll-container {
+        gap: 12px;
+    }
+
+    .day-item {
+        min-width: 64px;
+        padding: 10px;
+    }
+
+    .workout-image {
+        height: 220px;
+    }
+
+    .workout-details {
+        padding: 18px;
+    }
+
+    .workout-title {
+        font-size: 20px;
+    }
+
+    .progress-container {
+        padding: 24px;
+    }
+
+    .stat-number {
+        font-size: 40px;
+    }
+}
+
+/* ============================================
+   MOBILE L (425px)
+   ============================================ */
+@media (min-width: 425px) {
+    .plan-header {
+        padding: 18px 20px;
+    }
+
+    .plan-content {
+        padding: 0 20px;
+    }
+
+    .targets-grid {
+        gap: 16px;
+    }
+
+    .program-name {
+        font-size: 28px;
+    }
+
+    .user-avatar-header {
+        width: 52px;
+        height: 52px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .workout-image {
+        height: 240px;
+    }
+
+    .day-item {
+        min-width: 68px;
+    }
+}
+
+/* ============================================
+   TABLET (768px) - LAYOUT DESKTOP
+   ============================================ */
+@media (min-width: 768px) {
+    /* CONTAINER PRINCIPAL */
+    .plan-container {
+        flex-direction: row;
+    }
+
+    /* HEADERS */
+    .plan-header-plan {
+        display: flex !important;
+    }
+
+    .plan-header-progress {
+        display: none !important;
+    }
+
+    /* SIDEBAR VISÍVEL */
+    .dashboard-sidebar {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        width: 280px;
+        flex-shrink: 0;
+        border-right: 1px solid var(--gray-light);
+        padding: 24px 0;
+    }
+
+    .sidebar-header {
+        padding: 0 20px;
+        margin-bottom: 24px;
+    }
+
+    .sidebar-title {
+        font-size: 20px;
+        color: var(--black);
+        font-weight: 700;
+    }
+
+    .sidebar-user {
+        padding: 0 20px;
+        margin-bottom: 24px;
+    }
+
+    .sidebar-menu {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .menu-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 20px;
+        color: var(--gray-medium);
+        text-decoration: none;
+        transition: var(--transition);
+        border-left: 3px solid transparent;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .menu-item:hover {
+        background-color: var(--gray-light);
+        color: var(--black);
+    }
+
+    .menu-item.active {
+        color: var(--primary);
+        background-color: rgba(220, 20, 60, 0.08);
+        border-left-color: var(--primary);
+    }
+
+    .menu-icon {
+        font-size: 20px;
+        min-width: 24px;
+    }
+
+    .menu-text {
+        flex: 1;
+    }
+
+    .submenu {
+        display: flex !important;
+        flex-direction: column;
+        background-color: var(--gray-light);
+        border-top: 1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .submenu-item {
+        border-left: none;
+        padding-left: 48px;
+        background-color: transparent;
+    }
+
+    .submenu-item:hover {
+        background-color: #efefef;
+    }
+
+    .menu-arrow {
+        display: none;
+    }
+
+    /* MAIN CONTENT */
+    .plan-main {
+        flex: 1;
+        padding-bottom: 0;
+    }
+
+    .menu-toggle-mobile {
+        display: none;
+    }
+
+    /* HEADER */
+    .plan-header {
+        border-bottom: 1px solid var(--gray-light);
+        padding: 24px;
+        position: static;
+    }
+
+    .plan-header-content {
+        max-width: 100%;
+    }
+
+    .program-name {
+        font-size: 32px;
+    }
+
+    /* CONTENT */
+    .plan-content {
+        padding: 0 40px;
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
+        padding-top: 40px;
+    }
+
+    .plan-section {
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    /* TARGETS GRID */
+    .targets-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .target-card {
+        padding: 24px 20px;
+        border-radius: 14px;
+    }
+
+    .target-icon {
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 14px;
+    }
+
+    .target-label {
+        font-size: 13px;
+    }
+
+    .target-value {
+        font-size: 28px;
+    }
+
+    /* DAYS SCROLL */
+    .days-scroll-wrapper {
+        overflow-x: auto;
+    }
+
+    .days-scroll-container {
+        gap: 16px;
+        justify-content: flex-start;
+    }
+
+    .day-item {
+        min-width: 80px;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* WORKOUT CARD */
+    .workout-card {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .workout-image {
+        height: 100%;
+        min-height: 380px;
+    }
+
+    .workout-details {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .workout-title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .workout-meta {
+        gap: 24px;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+
+    .meta-item {
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .meta-icon {
+        font-size: 18px;
+    }
+
+    .workout-description {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+
+    .btn-workout {
+        font-size: 15px;
+        padding: 16px 32px;
+        width: fit-content;
+        min-width: 220px;
+    }
+
+    /* PROGRESS */
+    .progress-container {
+        padding: 32px;
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 32px;
+        align-items: center;
+    }
+
+    .progress-stat {
+        align-items: flex-start;
+    }
+
+    .stat-number {
+        font-size: 48px;
+    }
+
+    .stat-label {
+        font-size: 15px;
+    }
+
+    .progress-bar-wrapper {
+        width: 100%;
+    }
+
+    /* BOTTOM NAV HIDDEN */
+    .bottom-nav {
+        display: none;
+    }
+
+    /* SIDEBAR OVERLAY HIDDEN */
+    .sidebar-overlay {
+        display: none !important;
+    }
+
+    .user-avatar {
+        display: block;
+    }
+
+    /* Progresso Tablet */
+    .weight-card {
+        padding: 28px;
+    }
+
+    .weight-chart-container {
+        height: 200px;
+        margin-bottom: 24px;
+    }
+
+    .weight-current {
+        padding: 18px;
+    }
+
+    .weight-value {
+        font-size: 36px;
+    }
+
+    .progress-history-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .history-card {
+        padding: 18px;
+    }
+
+    .history-value {
+        font-size: 22px;
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .metric-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 18px;
+    }
+
+    .metric-icon {
+        font-size: 36px;
+        min-width: auto;
+    }
+
+    .metric-content {
+        width: 100%;
+    }
+
+    .metric-value {
+        font-size: 20px;
+    }
+}
+
+/* ============================================
+   DESKTOP (1024px)
+   ============================================ */
+@media (min-width: 1024px) {
+    .dashboard-sidebar {
+        width: 300px;
+    }
+
+    .plan-content {
+        padding: 0 60px;
+        max-width: 1000px;
+    }
+
+    .plan-section {
+        margin-bottom: 48px;
+    }
+
+    .targets-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        max-width: 500px;
+    }
+
+    .target-card {
+        padding: 28px 24px;
+    }
+
+    .target-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 16px;
+    }
+
+    .target-value {
+        font-size: 32px;
+    }
+
+    .days-scroll-container {
+        gap: 20px;
+    }
+
+    .day-item {
+        min-width: 90px;
+        padding: 14px;
+    }
+
+    .workout-card {
+        grid-template-columns: 400px 1fr;
+    }
+
+    .workout-image {
+        min-height: 420px;
+    }
+
+    .workout-details {
+        padding: 40px;
+    }
+
+    .workout-title {
+        font-size: 26px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    /* Progresso Desktop */
+    .weight-card {
+        padding: 32px;
+    }
+
+    .weight-chart-container {
+        height: 220px;
+    }
+
+    .weight-value {
+        font-size: 40px;
+    }
+
+    .progress-history-grid {
+        gap: 20px;
+    }
+
+    .history-card {
+        padding: 20px;
+    }
+
+    .history-value {
+        font-size: 24px;
+    }
+
+    .metrics-grid {
+        gap: 20px;
+    }
+
+    .metric-card {
+        padding: 20px;
+    }
+    
+    .metric-icon {
+        font-size: 40px;
+    }
+    
+    .metric-value {
+        font-size: 22px;
+    }
+
+    /* MAIS - Desktop */
+    .plan-header-more {
+        display: flex !important;
+    }
+
+    .plan-header-plan {
+        display: flex !important;
+    }
+
+    .plan-header-progress {
+        display: flex !important;
+    }
+
+    .boost-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .boost-card {
+        padding: 24px;
+    }
+
+    .boost-card-title {
+        font-size: 18px;
+    }
+
+    .boost-card-description {
+        font-size: 14px;
+    }
+
+    .progress-items-list {
+        gap: 14px;
+    }
+
+    .progress-item {
+        padding: 18px;
+    }
+
+    .progress-item-label {
+        font-size: 16px;
+    }
+
+    .progress-item-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .powerups-container {
+        padding: 40px;
+    }
+    }
+
+    /* ============================================
+    DESKTOP L (1440px)
+    ============================================ */
+@media (min-width: 1440px) {
+    .plan-content {
+        max-width: 1200px;
+        padding: 0 80px;
+    }
+
+    .targets-grid {
+        gap: 40px;
+        max-width: 600px;
+    }
+
+    .target-card {
+        padding: 32px 28px;
+    }
+
+    .target-icon {
+        font-size: 64px;
+    }
+
+    .target-value {
+        font-size: 36px;
+    }
+
+    .workout-card {
+        grid-template-columns: 450px 1fr;
+    }
+
+    .workout-image {
+        min-height: 480px;
+    }
+
+    .workout-details {
+        padding: 48px;
+    }
+
+    .workout-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+
+    .plan-section {
+        margin-bottom: 56px;
+    }
+}
+
+/* ============================================
+   DESKTOP XL (1920px)
+   ============================================ */
+@media (min-width: 1920px) {
+    .plan-content {
+        max-width: 1400px;
+    }
+
+    .workout-card {
+        grid-template-columns: 500px 1fr;
+    }
+}
+
+/* ============================================
+      WORKOUT EXECUTION SCREEN - RESPONSIVE
+      ============================================ */
+
+@media (min-width: 375px) {
+    .workout-hero {
+        height: 300px;
+    }
+
+    .workout-name {
+        font-size: 26px;
+    }
+
+    .exercise-thumbnail {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (min-width: 425px) {
+    .workout-hero {
+        height: 320px;
+    }
+
+    .hero-back-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .execution-content {
+        padding: 0 20px;
+    }
+
+    .execution-card {
+        padding: 18px;
+        margin-bottom: 18px;
+    }
+
+    .workout-name {
+        font-size: 28px;
+    }
+
+    .btn-start-workout {
+        padding: 18px 28px;
+        font-size: 17px;
+    }
+
+    .kit-thumbnail {
+        width: 64px;
+        height: 64px;
+    }
+
+    .equipment-thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* ============================================
+      TABLET (768px) - DESKTOP LAYOUT
+      ============================================ */
+@media (min-width: 768px) {
+    .workout-hero {
+        height: 400px;
+    }
+
+    .hero-back-btn {
+        top: 24px;
+        left: 40px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .execution-content {
+        padding: 0 40px;
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
+        padding-top: 32px;
+    }
+
+    .execution-card {
+        padding: 24px;
+        margin-bottom: 24px;
+    }
+
+    .workout-info-card {
+        padding: 28px;
+    }
+
+    .workout-name {
+        font-size: 32px;
+        margin-bottom: 18px;
+    }
+
+    .btn-start-workout {
+        padding: 20px 32px;
+        font-size: 18px;
+    }
+
+    .exercises-list {
+        gap: 14px;
+    }
+
+    .exercise-item {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .exercise-thumbnail {
+        width: 72px;
+        height: 72px;
+    }
+
+    .exercise-name {
+        font-size: 15px;
+    }
+
+    .kit-thumbnail {
+        width: 70px;
+        height: 70px;
+    }
+
+    .kit-title {
+        font-size: 15px;
+    }
+
+    .equipment-thumbnail {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+/* ============================================
+      DESKTOP L (1440px)
+      ============================================ */
+@media (min-width: 1440px) {
+    .workout-hero {
+        height: 480px;
+    }
+
+    .execution-content {
+        padding: 0 60px;
+        max-width: 1100px;
+    }
+
+    .execution-card {
+        padding: 32px;
+        margin-bottom: 32px;
+    }
+
+    .workout-info-card {
+        padding: 40px;
+    }
+
+    .workout-name {
+        font-size: 38px;
+    }
+
+    .workout-meta-row {
+        gap: 20px;
+    }
+
+    .meta-badge {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    .btn-start-workout {
+        padding: 22px 40px;
+        font-size: 19px;
+    }
+
+    .exercise-item {
+        padding: 18px;
+        gap: 18px;
+    }
+
+    .exercise-thumbnail {
+        width: 80px;
+        height: 80px;
+    }
+
+    .kit-thumbnail {
+        width: 80px;
+        height: 80px;
+    }
+
+    .equipment-thumbnail {
+        width: 72px;
+        height: 72px;
+    }
+}
+
+/* ============================================
+      PROGRESSO - MOBILE ONLY (< 768px)
+      ============================================ */
+@media (max-width: 767px) {
+    .dashboard-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 101;
+        width: 250px;
+        max-width: 80vw;
+    }
+
+    .dashboard-sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    .sidebar-overlay.visible {
+        display: block !important;
+    }
+
+    /* HIDE BOTTOM NAV ON EXECUTION SCREEN */
+    .workout-execution-screen ~ .bottom-nav,
+    #workoutExecutionScreen ~ .bottom-nav {
+        display: none;
+    }
+
+    /* Progresso Mobile */
+    .weight-card {
+        padding: 20px;
+    }
+
+    .weight-chart-container {
+        height: 160px;
+        margin-bottom: 16px;
+    }
+
+    .weight-current {
+        padding: 14px;
+    }
+
+    .weight-value {
+        font-size: 28px;
+    }
+
+    .progress-history-grid {
+        gap: 10px;
+    }
+
+    .history-card {
+        padding: 14px;
+    }
+
+    .history-value {
+        font-size: 18px;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .metric-card {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .metric-icon {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+    }
+
+    .metric-value {
+        font-size: 16px;
+    }
+
+    /* MAIS - Mobile */
+    .plan-header-more {
+        display: flex;
+    }
+
+    .plan-header-plan {
+        display: none;
+    }
+
+    .plan-header-progress {
+        display: none;
+    }
+
+    .boost-card {
+        padding: 18px;
+    }
+
+    .boost-card-title {
+        font-size: 15px;
+    }
+
+    .boost-card-description {
+        font-size: 12px;
+    }
+
+    .progress-item {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .progress-item-label {
+        font-size: 14px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .plan-header,
+    .bottom-nav,
+    .dashboard-sidebar,
+    .menu-toggle-mobile {
+        display: none;
+    }
+
+    .plan-main {
+        padding-bottom: 0;
+    }
+
+    .plan-content {
+        overflow: visible;
+    }
+}
+
+/* ============================================
+   TREINO EM ANDAMENTO - RESPONSIVIDADE
+   ============================================ */
+
+@media (min-width: 425px) {
+    .exercise-hero {
+        height: 320px;
+    }
+
+    .timer-display {
+        font-size: 48px;
+    }
+
+    .timer-section {
+        padding: 24px 20px;
+        gap: 14px;
+    }
+
+    .metrics-section {
+        gap: 14px;
+    }
+
+    .next-exercise-card {
+        margin: 0 20px;
+        padding: 16px;
+    }
+
+    .btn-skip-exercise {
+        width: calc(100% - 40px);
+        margin: 16px 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    /* TREINO EM ANDAMENTO */
+    .workout-in-progress-screen {
+        align-items: center;
+    }
+
+    .workout-progress-content {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .exercise-hero {
+        height: 380px;
+        border-radius: 16px;
+        margin-top: 24px;
+        overflow: hidden;
+    }
+
+    .timer-wrapper {
+        padding: 24px 32px 0;
+    }
+
+    .timer-section {
+        padding: 28px 32px;
+        gap: 16px;
+    }
+
+    .timer-display {
+        font-size: 56px;
+    }
+
+    .btn-skip-exercise {
+        width: calc(100% - 64px);
+        margin: 16px 32px;
+        padding: 16px;
+    }
+
+    .progress-bar-container {
+        padding: 0 32px 32px;
+    }
+
+    .metrics-section {
+        padding: 0 32px 32px;
+        gap: 16px;
+    }
+
+    .next-exercise-card {
+        margin: 0 32px 32px;
+        padding: 18px;
+    }
+
+    .modal-content {
+        max-width: 380px;
+    }
+
+    /* CONFIRMAÇÃO DE SAÍDA */
+    .workout-exit-screen {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .exit-header {
+        width: 100%;
+        max-width: 700px;
+        border: none;
+        padding: 40px 32px 32px;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .exit-content {
+        width: 100%;
+        max-width: 700px;
+        padding: 32px;
+    }
+
+    .exit-reasons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .reason-card {
+        padding: 24px;
+    }
+
+    .btn-submit-exit {
+        padding: 18px;
+        font-size: 15px;
+    }
+
+    /* MODAL */
+    .modal-content {
+        border-radius: 16px;
+        padding: 32px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .modal-buttons {
+        gap: 16px;
+    }
+
+    .btn-modal {
+        padding: 16px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .workout-progress-content {
+        max-width: 900px;
+    }
+
+    .exercise-hero {
+        height: 480px;
+        margin-top: 32px;
+    }
+
+    .timer-wrapper {
+        padding: 32px 40px 0;
+    }
+
+    .timer-section {
+        padding: 32px 40px;
+        gap: 20px;
+    }
+
+    .timer-display {
+        font-size: 64px;
+    }
+
+    .btn-skip-exercise {
+        width: calc(100% - 80px);
+        margin: 16px 40px;
+        padding: 18px;
+    }
+
+    .progress-bar-container {
+        padding: 0 40px 40px;
+        gap: 8px;
+    }
+
+    .metrics-section {
+        padding: 0 40px 40px;
+        gap: 18px;
+    }
+
+    .metric-item {
+        padding: 16px;
+    }
+
+    .next-exercise-card {
+        margin: 0 40px 40px;
+        padding: 20px;
+    }
+
+    .next-exercise-thumbnail {
+        width: 72px;
+        height: 72px;
+    }
+
+    .modal-content {
+        max-width: 400px;
+    }
+
+    .exit-content {
+        max-width: 900px;
+        padding: 48px 40px;
+    }
+
+    .exit-reasons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .reason-card {
+        padding: 28px;
+    }
+
+    .btn-submit-exit {
+        padding: 20px;
+        font-size: 16px;
+    }
+}
