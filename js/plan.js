@@ -150,20 +150,22 @@ function updateTargets() {
     const user = PlanState.currentUser;
     const targetCards = document.querySelectorAll('.target-card');
 
-    if (targetCards.length >= 2) {
-        const goalCard = targetCards[0];
-        const weightCard = targetCards[1];
-
-        const goalValue = goalCard.querySelector('.target-value');
-        const weightValue = weightCard.querySelector('.target-value');
-
-        if (goalValue) {
-            goalValue.textContent = user.goal || 'Ganhar Massa';
+    // Atualiza todos os cards (agora existem 2: um em plan-content e outro em progressSection)
+    targetCards.forEach((card, index) => {
+        const goalValue = card.querySelector('.target-value');
+        
+        if (index % 2 === 0) {
+            // Cards de objetivo (índices 0, 2, 4...)
+            if (goalValue) {
+                goalValue.textContent = user.goal || 'Ganhar Massa';
+            }
+        } else {
+            // Cards de peso (índices 1, 3, 5...)
+            if (goalValue) {
+                goalValue.textContent = user.targetWeight || '90 kg';
+            }
         }
-        if (weightValue) {
-            weightValue.textContent = user.targetWeight || '90 kg';
-        }
-    }
+    });
 }
 
 // ============================================

@@ -104,34 +104,6 @@
             <!-- CONTEÚDO PRINCIPAL -->
             <div class="plan-content">
 
-                <!-- CARDS DE META (GRID 2 COLUNAS NO MOBILE) -->
-                <section class="plan-section targets-section">
-                    <div class="targets-grid">
-                        <div class="target-card">
-                            <svg class="target-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
-                            <span class="target-label">Objetivo Principal</span>
-                            <span class="target-value">Ganhar Massa</span>
-                        </div>
-                        <div class="target-card">
-                            <svg class="target-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 3v18"></path>
-                                <path d="M6.5 7h11v10h-11z"></path>
-                                <path d="M4 18h16"></path>
-                            </svg>
-                            <span class="target-label">Meta de Peso</span>
-                            <span class="target-value">90 kg</span>
-                        </div>
-                    </div>
-                </section>
-
                 <!-- BARRA DE DIAS (SCROLLÁVEL) -->
                 <section class="plan-section days-section">
                     <h2 class="section-title">Semana 1</h2>
@@ -236,6 +208,34 @@
 
                 <!-- CONTEÚDO DO PROGRESSO -->
                 <div class="plan-content">
+
+                    <!-- CARDS DE META (OBJETIVO + PESO) -->
+                    <section class="plan-section targets-section">
+                        <div class="targets-grid">
+                            <div class="target-card">
+                                <svg class="target-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="6"></circle>
+                                    <circle cx="12" cy="12" r="2"></circle>
+                                </svg>
+                                <span class="target-label">Objetivo Principal</span>
+                                <span class="target-value">Ganhar Massa</span>
+                            </div>
+                            <div class="target-card">
+                                <svg class="target-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 3v18"></path>
+                                    <path d="M6.5 7h11v10h-11z"></path>
+                                    <path d="M4 18h16"></path>
+                                </svg>
+                                <span class="target-label">Meta de Peso</span>
+                                <span class="target-value">90 kg</span>
+                            </div>
+                        </div>
+                    </section>
 
                     <!-- CARD DE PESO -->
                     <section class="plan-section weight-card-section">
@@ -533,24 +533,24 @@
             </div>
 
             <!-- TELA 3: EXECUÇÃO DO TREINO (Fazer o Treino) -->
-            <div id="workoutExecutionScreen" class="workout-execution-screen" style="display: none;">
+             <div id="workoutExecutionScreen" class="workout-execution-screen screen-workout-execution" style="display: none;">
 
-            <!-- HERO DO TREINO -->
-            <div class="workout-hero">
-                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop" alt="Treino de Força" class="hero-image">
-                <div class="hero-overlay"></div>
+             <!-- HERO DO TREINO -->
+             <div class="hero-media">
+                 <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop" alt="Treino de Força" class="hero-image">
+                 <div class="hero-overlay"></div>
 
-                <!-- BOTÃO VOLTAR -->
-                <button class="hero-back-btn" onclick="goBackToPlan()" title="Voltar">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="19" y1="12" x2="5" y2="12"></line>
-                        <polyline points="12 19 5 12 12 5"></polyline>
-                    </svg>
-                </button>
-            </div>
+                 <!-- BOTÃO VOLTAR -->
+                 <button class="hero-back-btn" onclick="goBackToPlan()" title="Voltar">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                         <line x1="19" y1="12" x2="5" y2="12"></line>
+                         <polyline points="12 19 5 12 12 5"></polyline>
+                     </svg>
+                 </button>
+             </div>
 
-            <!-- CONTEÚDO PRINCIPAL -->
-            <div class="execution-content">
+             <!-- CONTEÚDO PRINCIPAL (CARD) -->
+             <div class="execution-content workout-content-card">
 
             <!-- CARD PRINCIPAL DO TREINO -->
             <section class="execution-card workout-info-card">
@@ -576,21 +576,6 @@
                 <button class="btn-start-workout" onclick="handleStartTraining()">
                     <span>COMECE A TREINAR</span>
                 </button>
-            </section>
-
-            <!-- AVISO DE SAÚDE -->
-            <section class="execution-card health-warning-card">
-                <div class="card-header-collapsible">
-                    <svg class="warning-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="12" y1="8" x2="12" y2="12"></line>
-                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                    </svg>
-                    <span class="warning-text">Consulte seu médico antes de começar</span>
-                    <svg class="expand-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </div>
             </section>
 
             <!-- ÁREAS DE FOCO -->
@@ -624,7 +609,7 @@
             <section class="execution-card equipment-card">
                 <h3 class="card-section-title">Equipamento Necessário</h3>
                 <div class="equipment-item">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=80&h=80&fit=crop" alt="Tapete" class="equipment-thumbnail">
+                    <img src="./assets/Foto-Tapete.avif" alt="Tapete" class="equipment-thumbnail">
                     <span class="equipment-name">Tapete</span>
                 </div>
             </section>
@@ -682,8 +667,8 @@
 
             </div>
 
-            <!-- TELA 4: TREINO EM ANDAMENTO (Em Execução) -->
-            <div id="workoutInProgressScreen" class="workout-in-progress-screen" style="display: none;">
+            <!-- TELA 4: TREINO EM ANDAMENTO (Em Execução) - PREVIEW -->
+            <div id="workoutInProgressScreen" class="workout-in-progress-screen screen-workout-preview" style="display: none;">
 
                 <!-- HEADER COM CLOSE BUTTON -->
                 <header class="workout-progress-header">
@@ -699,8 +684,8 @@
                 <div class="workout-progress-content">
 
                     <!-- VIDEO/THUMBNAIL DO EXERCÍCIO -->
-                    <div class="exercise-hero">
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=600&fit=crop" alt="Exercício" class="exercise-hero-image">
+                    <div class="exercise-hero hero-media">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1xcZCRRJ51k?autoplay=1&mute=1&playsinline=1&controls=0&rel=0&modestbranding=1&loop=1&playlist=1xcZCRRJ51k" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen style="display: block;"></iframe>
                         <div class="exercise-hero-overlay"></div>
                     </div>
 
@@ -770,7 +755,7 @@
             </div>
 
             <!-- TELA 5: CONFIRMAÇÃO DE SAÍDA -->
-            <div id="workoutExitScreen" class="workout-exit-screen" style="display: none;">
+            <div id="workoutExitScreen" class="workout-exit-screen screen-exit-confirm" style="display: none;">
 
                 <!-- HEADER -->
                 <header class="exit-header">

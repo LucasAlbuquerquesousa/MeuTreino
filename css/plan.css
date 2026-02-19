@@ -136,11 +136,17 @@
 }
 
 /* ============================================
-   CARDS DE META (OBJETIVO + PESO)
-   ============================================ */
+    CARDS DE META (OBJETIVO + PESO)
+    ============================================ */
 
-.targets-section {
+/* Esconde targets na aba Plan, mostra apenas em Progresso */
+.plan-content .targets-section {
+    display: none;
+}
+
+#progressSection .targets-section {
     margin-top: 16px;
+    display: block;
 }
 
 .targets-grid {
@@ -296,8 +302,8 @@
 }
 
 /* ============================================
-   CARD DO TREINO DO DIA
-   ============================================ */
+    CARD DO TREINO DO DIA
+    ============================================ */
 
 .workout-section {
     margin-top: 24px;
@@ -306,7 +312,7 @@
 .workout-card {
     background: var(--white);
     border: 1px solid var(--gray-light);
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -328,6 +334,7 @@
     height: 200px;
     overflow: hidden;
     background: var(--gray-light);
+    border-radius: 20px 20px 0 0;
 }
 
 .workout-image img {
@@ -1094,15 +1101,17 @@ svg {
     padding-bottom: 0;
 }
 
-/* HERO SECTION */
-.workout-hero {
+/* HERO SECTION - TELA 3 (SCOPED) */
+.screen-workout-execution .hero-media {
     position: relative;
     width: 100%;
     height: 280px;
     overflow: hidden;
+    border-radius: 24px;
+    z-index: 1;
 }
 
-.workout-hero .hero-image {
+.screen-workout-execution .hero-media .hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1117,6 +1126,16 @@ svg {
     bottom: 0;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
     pointer-events: none;
+}
+
+/* CONTENT CARD - TELA 3 (SCOPED) */
+.screen-workout-execution .workout-content-card {
+    position: relative;
+    z-index: 2;
+    margin-top: -18px;
+    border-radius: 24px;
+    background: var(--white);
+    padding: 24px 16px;
 }
 
 .hero-back-btn {
@@ -1231,38 +1250,6 @@ svg {
 
 .btn-start-workout:active {
     transform: translateY(0);
-}
-
-/* HEALTH WARNING CARD */
-.health-warning-card {
-    background: rgba(220, 20, 60, 0.08);
-    border: 1px solid rgba(220, 20, 60, 0.2);
-    padding: 14px;
-}
-
-.card-header-collapsible {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-    user-select: none;
-}
-
-.warning-icon {
-    color: var(--primary);
-    flex-shrink: 0;
-}
-
-.warning-text {
-    flex: 1;
-    font-size: 14px;
-    color: var(--black);
-    font-weight: 500;
-}
-
-.expand-arrow {
-    color: rgba(0, 0, 0, 0.4);
-    flex-shrink: 0;
 }
 
 /* FOCUS AREAS CARD */
@@ -1575,6 +1562,12 @@ svg {
     display: block;
 }
 
+.hero-media iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
 .exercise-hero-overlay {
     position: absolute;
     top: 0;
@@ -1825,58 +1818,64 @@ svg {
 .workout-exit-screen {
     display: flex;
     flex-direction: column;
+    height: 100dvh;
     height: 100vh;
     background-color: var(--white);
-    padding-bottom: 24px;
+    padding-bottom: 0;
     z-index: 1000;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
-.exit-header {
-    padding: 32px 16px 24px;
+.screen-exit-confirm .exit-header {
+    padding: 20px 16px 16px;
     text-align: center;
     border-bottom: 1px solid var(--gray-light);
+    flex-shrink: 0;
 }
 
-.exit-title {
-    font-size: 24px;
+.screen-exit-confirm .exit-title {
+    font-size: 20px;
     font-weight: 700;
     color: var(--black);
-    margin: 0 0 8px 0;
+    margin: 0 0 4px 0;
 }
 
-.exit-subtitle {
-    font-size: 14px;
+.screen-exit-confirm .exit-subtitle {
+    font-size: 12px;
     color: var(--gray-medium);
     margin: 0;
 }
 
-.exit-content {
+.screen-exit-confirm .exit-content {
     flex: 1;
-    padding: 24px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.exit-reasons {
+    padding: 16px 12px;
     display: flex;
     flex-direction: column;
     gap: 12px;
+    overflow-y: auto;
 }
 
-.reason-card {
+.screen-exit-confirm .exit-reasons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    flex: 1;
+}
+
+.screen-exit-confirm .reason-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 20px;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 12px;
     background: rgba(220, 20, 60, 0.08);
     border: 2px solid rgba(0, 0, 0, 0.08);
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.15s ease;
     text-align: center;
+    min-height: 100px;
 }
 
 .reason-card:hover {
@@ -1890,43 +1889,48 @@ svg {
     background-color: rgba(220, 20, 60, 0.15);
 }
 
-.reason-icon {
+.screen-exit-confirm .reason-icon {
+    width: 28px;
+    height: 28px;
     color: var(--primary);
     transition: all 0.15s ease;
 }
 
-.reason-card.selected .reason-icon {
+.screen-exit-confirm .reason-card.selected .reason-icon {
     color: var(--primary);
     transform: scale(1.1);
 }
 
-.reason-title {
-    font-size: 14px;
+.screen-exit-confirm .reason-title {
+    font-size: 12px;
     font-weight: 700;
     color: var(--black);
     display: block;
+    line-height: 1.2;
 }
 
-.reason-subtitle {
-    font-size: 12px;
+.screen-exit-confirm .reason-subtitle {
+    font-size: 10px;
     color: #f5f5f5;
     display: block;
+    line-height: 1.2;
 }
 
-.btn-submit-exit {
-    width: 100%;
-    padding: 16px;
+.screen-exit-confirm .btn-submit-exit {
+    width: calc(100% - 24px);
+    padding: 12px;
     background-color: var(--primary);
     color: white;
     border: none;
     border-radius: 12px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.15s ease;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
-    margin-top: auto;
+    letter-spacing: 0.5px;
+    margin: 0 12px 12px 12px;
+    flex-shrink: 0;
 }
 
 .btn-submit-exit:hover {
@@ -2048,3 +2052,26 @@ svg {
     border-color: var(--primary);
     opacity: 0.9;
 }
+
+/* ============================================
+   LAYOUT BETTERME - SCOPED APENAS PARA SCREEN-WORKOUT-PREVIEW
+   ============================================ */
+
+/* Hero media com border radius (APENAS na tela de preview do treino) */
+.screen-workout-preview .exercise-hero {
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* Content card com overlap (APENAS na tela de preview) */
+.screen-workout-preview .timer-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-top: -18px;
+    border-radius: 24px;
+    background: var(--white);
+}
+
+/* (Removido - TELA 3 agora usa layout BetterMe com .hero-media e .workout-content-card) */
